@@ -44,3 +44,15 @@ jobScope && stepScope
 - DB connection 빈도가 높아 비교적 성능이 낮은 반면,짧은 Connection유지 시간 필요 
 - 매번 Connection 을 하기 때문에 Thread Safe
 - 페이징 단위의 결과만 메모리에 할당하기 때문에 , 비교적 더 적은 메모리르 ㄹ 사용 
+
+
+
+# ItemProcessor 
+- itemReader에서 읽은 데이터를 가공 또는 Filtering
+- Step의 itemProcessor는 Optional 
+- ItemProcessor는 필수는 아니지만 책임 분리를 위해서 사용한다고함.
+
+
+# 스프링 배치에서 전 처리 ,후 처리 하는 다양한 종류 의 Listener 
+ - Job 실행 전과 후에 실행할 수 있는 JobExecutionListener 
+ - StepExecutionListener step실행 전과 후에 실행할수있는거 
