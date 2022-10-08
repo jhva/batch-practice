@@ -26,3 +26,7 @@ step은 해당step에서만 가능
 - 예를 들어서 10000개의 데이터 중 1000개씩 10개 덩어리로 수행 
 - 이를 Tasklet으로 처리하면 10000개를 한번에 처리하거나 수ㅡ동으로 1000개씩 분할 
 - 
+
+# Scope 
+jobScope && stepScope 
+- Spring에서 Scope는 @Bean의 라이프사이클 (싱글톤)
