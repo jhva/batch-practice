@@ -56,3 +56,19 @@ jobScope && stepScope
 # 스프링 배치에서 전 처리 ,후 처리 하는 다양한 종류 의 Listener 
  - Job 실행 전과 후에 실행할 수 있는 JobExecutionListener 
  - StepExecutionListener step실행 전과 후에 실행할수있는거 
+
+
+## step에 관련 된 모든 Listener는 StepListener를 상속 
+ - StepExecutionListener
+ - SkipListener : skip의 예외처리 방법중 하나임 ,
+ - ItemReadListener
+ - ItemProcessListener
+ - ItemWriteListener
+ - ChunkListener
+
+
+# skip ? 
+- step 수행중 발생한 특정 Execution 과 에러 횟수 설정으로 예외처리 설정 
+skip.Limit(3) 으로 설정된 경우 
+- NotFoundNameexception 3번까지는 에러를 skip하는데 4번째는 실패로 끝나고 배치가 중단됨 . 
+단 !! 에러가 발생하기 전까지 데이터는 모두 처리된 상태로 남는다 . 
