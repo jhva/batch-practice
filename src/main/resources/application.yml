@@ -1,6 +1,22 @@
+#spring:
+#  batch:
+#    job:
+#      names: ${job.name:NONE} #?? ??? ?????? ?????
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#  sql:
+#    init:
+#      data-locations: classpath:person.sql
+#
+##    jdbc:
+###      initialize-schema:
 spring:
   batch:
     job:
-      names: ${job.name:NONE} #?? ??? ?????? ????? .
-    jdbc:
-      initialize-schema:
+      names: ${job.name:NONE}
+    initialize-schema:
+  datasource:
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      data-locations: classpath:person.sql

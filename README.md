@@ -30,3 +30,17 @@ step은 해당step에서만 가능
 # Scope 
 jobScope && stepScope 
 - Spring에서 Scope는 @Bean의 라이프사이클 (싱글톤)
+
+
+# Cursor
+
+- 배치처리가 완료될때ㅔ 까지 DB Connection 연결 
+- DB Connection  빈도가 낮아 성능이 좋은 반며느 긴 connection 유지 필요 
+- 하나의 connection 에서 처리되기때문에 Thread Safe 하지 않음 
+- 모드 ㄴ결과를 메모리에 할당하기때문에 , 더 많은 메모리를 사용 
+
+# Paging 
+- 페이징 단위로 DB Connection 연결 
+- DB connection 빈도가 높아 비교적 성능이 낮은 반면,짧은 Connection유지 시간 필요 
+- 매번 Connection 을 하기 때문에 Thread Safe
+- 페이징 단위의 결과만 메모리에 할당하기 때문에 , 비교적 더 적은 메모리르 ㄹ 사용 
